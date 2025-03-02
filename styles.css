@@ -1,0 +1,295 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Orbitron:wght@400;700&display=swap');
+
+:root {
+    --primary: #ff2a6d;
+    --secondary: #05d9e8;
+    --accent: #ff71ce;
+    --neon-green: #39ff14;
+    --background: #01012b;
+    --card: #1a1a3f;
+    --gradient: linear-gradient(45deg, #ff2a6d, #05d9e8);
+}
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    background-color: var(--background);
+    color: #fff;
+    margin: 0;
+    min-height: 100vh;
+    background: 
+        linear-gradient(rgba(1, 1, 43, 0.97), rgba(1, 1, 43, 0.97)),
+        repeating-linear-gradient(
+            90deg,
+            transparent 0,
+            transparent 80px,
+            rgba(255, 42, 109, 0.1) 80px,
+            rgba(255, 42, 109, 0.1) 160px
+        ),
+        repeating-linear-gradient(
+            180deg,
+            transparent 0,
+            transparent 80px,
+            rgba(5, 217, 232, 0.1) 80px,
+            rgba(5, 217, 232, 0.1) 160px
+        );
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+h1 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 50px;
+    color: var(--primary);
+    text-shadow: 
+        0 0 10px var(--primary),
+        0 0 20px var(--primary),
+        0 0 40px var(--primary);
+    position: relative;
+}
+
+h1::before, h1::after {
+    content: '< />';
+    position: absolute;
+    font-size: 0.4em;
+    color: var(--secondary);
+    opacity: 0.8;
+}
+
+h1::before {
+    left: 20%;
+    transform: translateX(-50%);
+}
+
+h1::after {
+    right: 20%;
+    transform: translateX(50%);
+}
+
+.generator-container {
+    background: var(--card);
+    border: 3px solid var(--primary);
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 
+        0 0 20px rgba(255, 42, 109, 0.2),
+        inset 0 0 20px rgba(255, 42, 109, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.generator-container::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent 0%,
+        rgba(255, 42, 109, 0.1) 50%,
+        transparent 100%
+    );
+    animation: shine 3s infinite;
+}
+
+@keyframes shine {
+    0% { transform: translateX(-30%) translateY(-30%) rotate(0deg); }
+    100% { transform: translateX(30%) translateY(30%) rotate(45deg); }
+}
+
+.form-group {
+    margin-bottom: 30px;
+    position: relative;
+}
+
+label {
+    display: block;
+    color: var(--secondary);
+    margin-bottom: 15px;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+select, input, textarea {
+    width: 100%;
+    padding: 15px;
+    background: rgba(1, 1, 43, 0.7);
+    border: 2px solid var(--secondary);
+    border-radius: 8px;
+    color: #fff;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.1em;
+    transition: all 0.3s ease;
+}
+
+select:focus, input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 15px rgba(255, 113, 206, 0.3);
+}
+
+.preview {
+    background: rgba(1, 1, 43, 0.9);
+    padding: 30px;
+    border-radius: 12px;
+    margin-top: 40px;
+    border: 2px solid var(--neon-green);
+    font-size: 1.2em;
+    white-space: pre-wrap;
+    position: relative;
+    overflow: hidden;
+}
+
+.preview::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--gradient);
+    animation: scanline 2s linear infinite;
+}
+
+@keyframes scanline {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(1000%); }
+}
+
+.button-group {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+    justify-content: center;
+}
+
+button {
+    font-family: 'Press Start 2P', cursive;
+    padding: 20px 40px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    overflow: hidden;
+}
+
+.generate-btn {
+    background: var(--primary);
+    color: white;
+    box-shadow: 0 0 15px rgba(255, 42, 109, 0.5);
+}
+
+.copy-btn {
+    background: var(--secondary);
+    color: white;
+    box-shadow: 0 0 15px rgba(5, 217, 232, 0.5);
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 20px rgba(255, 42, 109, 0.8);
+}
+
+button::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.2) 50%,
+        transparent 100%
+    );
+    transform: rotate(45deg);
+    transition: 0.5s;
+}
+
+button:hover::after {
+    left: 100%;
+}
+
+.achievements {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.achievement-card {
+    background: var(--card);
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid var(--accent);
+    position: relative;
+    overflow: hidden;
+}
+
+.achievement-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent, rgba(255, 113, 206, 0.1), transparent);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 0.5; }
+    50% { transform: scale(1.05); opacity: 0.8; }
+    100% { transform: scale(1); opacity: 0.5; }
+}
+
+/* Добавляем эффект глитча */
+.glitch {
+    position: relative;
+}
+
+.glitch::before,
+.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.glitch::before {
+    left: 2px;
+    text-shadow: -2px 0 var(--secondary);
+    clip: rect(24px, 550px, 90px, 0);
+    animation: glitch-anim 3s infinite linear alternate-reverse;
+}
+
+.glitch::after {
+    left: -2px;
+    text-shadow: -2px 0 var(--primary);
+    clip: rect(85px, 550px, 140px, 0);
+    animation: glitch-anim 2s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim {
+    0% { clip: rect(24px, 550px, 90px, 0); }
+    20% { clip: rect(85px, 550px, 140px, 0); }
+    40% { clip: rect(66px, 550px, 114px, 0); }
+    60% { clip: rect(92px, 550px, 135px, 0); }
+    80% { clip: rect(15px, 550px, 94px, 0); }
+    100% { clip: rect(53px, 550px, 115px, 0); }
+} 
