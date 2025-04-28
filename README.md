@@ -38,7 +38,7 @@ README RPG Generator - это веб-приложение, которое тра
 
 ## 🚀 Демо
 
-![image](https://github.com/user-attachments/assets/4d905196-eae4-4fd4-beb1-96420ae5c584)
+https://github-rpg.netlify.app/
 
 
 ## 💻 Технологии
@@ -94,9 +94,3 @@ README RPG Generator - это веб-приложение, которое тра
 ## 👨‍💻 Автор
 
 qxzxf - [GitHub](https://github.com/qxzxf)
-
----
-
-<div align="center">
-  <sub>Built with ❤️ by developers for developers</sub>
-</div>
